@@ -1,0 +1,266 @@
+:root{
+  --Gradient1: hsl(6, 100%, 80%); 
+  --Gradient2: hsl(335, 100%, 65%);
+  --Pale_Blue: hsl(243, 100%, 93%);
+  --Grayish_Blue: hsl(229, 7%, 55%);
+  --Dark_Blue: hsl(228, 56%, 26%);
+  --Very_Dark_Blue: hsl(229, 57%, 11%);
+  --color: lineargradient()
+}
+
+body{
+  font-family: Raleway;
+  background-color: var(--Very_Dark_Blue);
+  background-image: url(images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 100vw 50vh;
+  width: 100%;
+}
+
+.container{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.card{
+  /* border: 2px solid black; */
+  display: grid;
+  grid-template-columns: auto auto;
+  /* flex-direction: row; */
+  justify-content: end;
+  align-items: end;
+  /* max-width: 90rem; */
+  /* margin-inline: auto; */
+  /* position: relative; */
+}
+
+.left{
+  /* border: 2px solid red; */
+  height: 175px;
+  width: 325px;
+  background-color: var(--Dark_Blue);
+  border-radius: 10px;
+  border-top-right-radius: 100px;
+  margin-right: 30px;
+}
+
+.logo{
+  padding-top: 30px;
+  margin-left: 40px;
+}
+
+.icons{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 45px;
+  padding-top: 20px;
+}
+
+.document, .folder, .upload{
+  background-color: var(--Very_Dark_Blue);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.doc-img, .fol-img, .up-img{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.right{
+  /* border: 2px solid green; */
+  height: 140px;
+  width: 520px;
+  border-radius: 10px;
+  background-color: var(--Dark_Blue);
+  position: relative;
+}
+
+.para{
+  margin-left: 40px;
+  padding-top: 15px;
+}
+
+.stat{
+  font-size: 14px;
+  color: var(--Pale_Blue);
+  opacity: 0.5;
+}
+
+.strong{
+  color: white;
+  opacity: 1;
+}
+
+
+.available-storage{
+  background-color: hsla(229, 59%, 11%, 0.6);
+  margin-left: 42px;
+  margin-top: 20px;
+  /* margin-top: 20px; */
+  width: 440px;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.used-storage{
+  position: absolute;
+  bottom: 0;
+  margin-left: 3px;
+  background-image: linear-gradient(90deg, var(--Gradient1), var(--Gradient2));
+  height: 17px;
+  width: 330px;
+  border-radius: 10px;
+}
+
+.marker{
+  position: absolute;
+  right: 0;
+  margin-top: 2px;
+  margin-right: 2px;
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.info{
+  font-size: 12px;
+  color: var(--Pale_Blue);
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-left: 40px;
+  justify-content: space-between;
+  width: 440px;
+  font-weight: 700;
+}
+
+.message{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: -40px;
+  margin-right: 40px;
+  height: 60px;
+  width: 160px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message::after{
+  content: "";
+  border-top: 20px solid transparent;
+  border-right: 20px solid white;
+  border-bottom: 20px solid transparent;
+  margin-top: 60px;
+  margin-right: -8px;
+}
+
+/* .message::before{
+  content: "";
+  border-top: 20px solid transparent;
+  border-right: 20px solid white;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid transparent;
+  margin-left: -68px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  
+} */
+
+.num{
+  color: black;
+  font-weight: 700;
+  font-size: 40px;
+  /* display: block; */
+}
+
+.grey{
+  color: var(--Grayish_Blue);
+  padding-left: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  align-self: center;
+}
+
+@media (max-width: 750px){
+  body{
+    background-image: url(images/bg-mobile.png);
+    background-position: bottom right;
+    background-size: cover;
+  }
+
+  .container{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    width: 100%;
+  }
+
+  .left{
+    width: 80%;
+    margin-right: 0;
+  }
+
+  .right{
+    width: 80%;
+    margin-left: 0;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .available-storage{
+    width: 80%;
+  }
+
+  .used-storage{
+    width: 77%;
+  }
+
+  .info{
+    width: 80%;
+  }
+
+  .message{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 120px;
+  }
+
+  .message::after{
+    content: "";
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+}
